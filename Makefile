@@ -8,7 +8,7 @@ OS        := $(shell go env GOOS)
 .PHONY: all
 all: build_all
 
-# Build the Go binary fro all Operating Systems
+# Build the Go binary for all Operating Systems
 .PHONY: build_all
 build_all:
 	@echo "Building $(BINARY) for all OS..."
@@ -16,8 +16,7 @@ build_all:
 	GOARCH=amd64 GOOS=windows $(GO) build -o ./build/$(BINARY)-windows $(MAIN)
 	GOARCH=amd64 GOOS=darwin $(GO) build -o ./build/$(BINARY)-mac $(MAIN)
 
-
-# Build the Go binary fro all Operating Systems
+# Build the Go binary for Current Operating System
 .PHONY: build
 build:
 	@echo "Building $(BINARY) for $(OS)..."
